@@ -1,0 +1,18 @@
+@import '../sass/variables.scss';
+
+$section-y-padding: $spacer * 3;
+
+.section {
+  padding: $section-y-padding 0;
+}
+
+.section-title {
+  text-transform: uppercase;
+}
+
+.section-horizontal-divider {
+  margin: $spacer 0;
+  height: 0.25rem;
+  width: 2rem;
+  background-color: $primary;
+}

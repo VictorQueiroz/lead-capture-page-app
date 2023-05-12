@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["app.d.ts", "**/*.ts", "**/*.tsx"],
+  "extends": "../tsconfig.base.json"
+}

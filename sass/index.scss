@@ -1,0 +1,19 @@
+$font-family-sans-serif: 'Source Sans 3', sans-serif;
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './fonts/source-sans/source-sans-3.css';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+
+@font-face {
+  font-family: 'Wiggly Curves Regular';
+  src: url(./fonts/WigglyCurvesRegular.ttf);
+}
+
+@font-face {
+  font-family: 'Bree Serif Regular';
+  src: url(./fonts/BreeSerifRegular.ttf);
+}

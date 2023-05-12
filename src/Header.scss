@@ -1,0 +1,61 @@
+@import '../sass/variables.scss';
+
+$header-item-x-margin: $spacer * 1.5 !default;
+$header-item-y-margin: $spacer * 0.75 !default;
+$header-height: 30rem !default;
+$header-separator-width: $spacer * calc(1 / 16) !default;
+
+.header {
+  @include media-breakpoint-up(lg) {
+    height: $header-height;
+    max-height: $header-height;
+  }
+  padding: $spacer * 2 $spacer;
+  color: $white;
+  background-size: cover;
+  background-image: url(./header/bg.jpg);
+  &-title {
+    font-size: $h2-font-size;
+    font-family: 'Bree Serif Regular';
+  }
+  &-content {
+    padding: $spacer * 2 0;
+  }
+  &-separator {
+    height: 2.8rem;
+    width: $header-separator-width;
+    background-color: $gray-100;
+    margin: 0 $header-item-x-margin;
+  }
+  &-button {
+    padding: $header-item-y-margin $spacer * 2;
+    font-size: $font-size-lg;
+    user-select: none;
+    border-radius: 1.5rem;
+    &:active {
+      background-color: transparentize($gray-800, 0.75);
+      @include media-breakpoint-up(lg) {
+        background-color: transparent;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+      font-size: $font-size-base;
+      padding: 0 $header-item-x-margin;
+    }
+  }
+  .header-horizontal-separator {
+    width: 100%;
+    height: 0.4rem;
+    background-color: $gray-100;
+    margin: $header-item-y-margin 0;
+  }
+  a.header-button {
+    display: block;
+    color: $white;
+    text-decoration: none;
+  }
+}
