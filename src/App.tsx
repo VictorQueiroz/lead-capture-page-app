@@ -3,6 +3,7 @@ import ContactUsSection from './ContactUsSection';
 import Header from './Header';
 import Section from './Section';
 import Paragraphs from './Paragraphs';
+import './pricing/Pricing.scss';
 
 export default function App() {
   const aboutMeParagraphs = useMemo(
@@ -44,27 +45,21 @@ export default function App() {
         'Keep in mind we develop applications with scalability in mind, so they are made for the future as well, to support millions of consecutive users.'
       ],
       ['Please see listed below:'],
-      [
-        [
-          <ul key="serviceList">
-            <li>Lead capture page creation from scratch</li>
-            <li>Applications that deal with payment provider services</li>
-            <li>
-              Highly scalable real-time low-latency application development
-              using WebSockets or raw TCP sockets when needed
-            </li>
-            <li>React Native application development (Android-only)</li>
-            <li>
-              Native desktop application development using modern Qt versions
-            </li>
-            <li>
-              Scalable Zoom-like application development using modern WebRTC
-              technologies
-            </li>
-            <li>Full source code and VCS history provided</li>
-          </ul>
-        ]
-      ],
+      <ul key="serviceList">
+        <li>Lead capture page creation from scratch</li>
+        <li>Applications that deal with payment provider services</li>
+        <li>
+          Highly scalable real-time low-latency application development using
+          WebSockets or raw TCP sockets when needed
+        </li>
+        <li>React Native application development (Android-only)</li>
+        <li>Native desktop application development using modern Qt versions</li>
+        <li>
+          Scalable Zoom-like application development using modern WebRTC
+          technologies
+        </li>
+        <li>Full source code and VCS history provided</li>
+      </ul>,
       [
         'Any of the services you are interested is not listed? Please let us know.'
       ]
@@ -76,20 +71,16 @@ export default function App() {
       [
         'You can see below technologies we usually use to develop our applications:'
       ],
-      [
-        [
-          <ul key="technologyList">
-            <li>Node.js</li>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
-            <li>Next.js</li>
-            <li>WebAssembly</li>
-            <li>Qt</li>
-            <li>Docker</li>
-            <li>C or C++</li>
-          </ul>
-        ]
-      ]
+      <ul key="technologyList">
+        <li>Node.js</li>
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>Next.js</li>
+        <li>WebAssembly</li>
+        <li>Qt</li>
+        <li>Docker</li>
+        <li>C or C++</li>
+      </ul>
     ],
     []
   );
@@ -102,7 +93,10 @@ export default function App() {
       <Section title="Services">
         <Paragraphs>{providedServicesParagraphs}</Paragraphs>
       </Section>
-      <Section title="Pricing">
+      <Section
+        title="Pricing"
+        className="section-pricing text-white d-flex align-items-center"
+      >
         <Paragraphs>{pricingParagraphs}</Paragraphs>
       </Section>
       <Section title="Technologies">

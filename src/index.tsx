@@ -1,3 +1,4 @@
+import 'webrtc-adapter';
 import '../sass/index.scss';
 import { Client, LoggerNetwork } from '@jscriptlogger/client';
 import Logger, { LogLevel } from '@jscriptlogger/lib';
