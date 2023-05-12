@@ -58,4 +58,7 @@ $header-separator-width: $spacer * calc(1 / 16) !default;
     color: $white;
     text-decoration: none;
   }
+  .header-button-icon {
+    will-change: transform, opacity;
+  }
 }

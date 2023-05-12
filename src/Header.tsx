@@ -1,7 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './Header.scss';
 import useActiveBreakpoints from './useActiveBreakpoints';
-import { animated, useSpring, useTrail } from '@react-spring/web';
+import {
+  animated,
+  useSpring,
+  useSpringRef,
+  useTrail,
+  useTransition
+} from '@react-spring/web';
 
 export default function Header() {
   const phoneNumber = '+1 815 825 4718';
@@ -85,6 +91,24 @@ export default function Header() {
       </animated.div>
     );
   });
+  const collapseHeaderTransitionRef = useSpringRef();
+  const collapseHeaderButtonTransition = useTransition(isHeaderCollapsed, {
+    from: {
+      opacity: 0,
+      transform: 'translate3d(100%,0,0)'
+    },
+    enter: {
+      opacity: 1,
+      transform: 'translate3d(0%,0,0)'
+    },
+    leave: {
+      opacity: 0,
+      transform: 'translate3d(-50%,0,0)'
+    }
+  });
+  useEffect(() => {
+    collapseHeaderTransitionRef.start();
+  }, [isHeaderCollapsed, collapseHeaderTransitionRef]);
   return (
     <div className="header">
       <div className="container h-100">
@@ -105,7 +129,19 @@ export default function Header() {
                       className="header-button"
                       onClick={toggleCollapseHeader}
                     >
-                      <i className="fa-solid fa-bars" />
+                      {collapseHeaderButtonTransition((style, isCollapsed) =>
+                        isCollapsed ? (
+                          <animated.i
+                            style={style}
+                            className="header-button-icon fa-solid fa-xmark"
+                          />
+                        ) : (
+                          <animated.i
+                            style={style}
+                            className="header-button-icon fa-solid fa-bars"
+                          />
+                        )
+                      )}
                     </div>
                   </>
                 )}
